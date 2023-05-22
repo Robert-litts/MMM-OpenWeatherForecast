@@ -41,12 +41,12 @@ module.exports = NodeHelper.create({
       } else {
 
         //make request to OpenWeather One Call API
-        var url = "https://api.openweathermap.org/data/2.5/onecall?" +
-          "lat=" + payload.latitude +
-          "&lon=" + payload.longitude +
-          "&exclude=" + "minutely" +
-          "&appid=" + payload.apikey +
-          "&units=" + payload.units +
+        //https://api.pirateweather.net/forecast/[apikey]/[latitude],[longitude],[time]?exclude=[excluded]&units=[unit]&extend=[hourly]&tz=[precise]
+        
+        var url = "https://api.pirateweather.net/forecast/" +
+          payload.apikey + "/" +
+          payload.latitude + "," + payload.longitude +
+          "?units=" + payload.units +
           "&lang=" + payload.language;
 
         /* 
